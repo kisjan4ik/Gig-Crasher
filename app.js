@@ -12,3 +12,18 @@ var settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
 });
+
+$.ajax({
+    type: "GET",
+    url: "https://app.ticketmaster.com/discovery/v2/classifications/segments/KZazBEonSMnZfZ7vFta.json?apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
+    async: true,
+    dataType: "json",
+    success: function (json) {
+        console.log(json);
+        // Parse the response.
+        // Do other things.
+    },
+    error: function (xhr, status, err) {
+        // This time, we do not end up here!
+    }
+});
