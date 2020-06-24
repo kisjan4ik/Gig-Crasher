@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(cityscape.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 70px;
+    font-size: 55px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.search-field {
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 35px;
+    outline: none;
+}
+
+.events {
+    width: 500px;
+}
+
+.location {
+    width: 300px;
+}
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background: lightblue;
+    border: none;
+    color: black;
+    border-radius: 25px;
+}
+
+.search-btn:hover {
+    background: pink;
+    cursor: pointer;
+}
+
+.form-box {
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+}
