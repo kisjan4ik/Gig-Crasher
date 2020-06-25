@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +7,14 @@
   <title>Gig-Crashers</title>
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- remove comment below to add image (and remove comment from img) -->
+  <!-- remove comment below to add image (and remove comment from img) -->
   <!-- <section class="hero"> -->
   <section class="hero is-medium is-primary">
     <!-- <img src="cityscape.jpg"> -->
@@ -29,8 +31,6 @@
               <!-- input field for visitor to name the event  -->
               <div class="form-box">
                 <input type="text" class="search-field events">
-                <!-- <input type="text" class="search-field location" id="searchDestination" placeholder="...Where do you want to go?..."> -->
-
               </div>
               <br>
               <i class="fa fa-plane" aria-hidden="true"></i>
@@ -45,6 +45,21 @@
               <!-- </div> -->
               <br><br>
               <button class="search-btn" type="button"> Search </button>
+              Want to view flights?
+              <div class="form-box">
+                <p>Select a city...</p>
+                <div>
+                  <input class="form-box" type="text"
+                    class="search-field location" id="searchDestination">
+                </div>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <i>Nope. All good!</i>
+                </label>
+                <br><br>
+                <button class="search-btn" type="button"> Search
+                </button>
+              </div>
             </h2>
           </div>
         </div>
@@ -73,7 +88,8 @@
                 <div class="step-marker"></div>
                 <div class="step-details">
                   <p class="step-title"><i>Step 2</i></p>
-                  <p>Check the box if you would like to see flights...</p>
+                  <p>Check the box if you don't need
+                    flights, or type in a city if you do...</p>
                 </div>
               </div>
               <br>
@@ -81,7 +97,8 @@
                 <div class="step-marker"></div>
                 <div class="step-details">
                   <p class="step-title"><i>Step 3</i></p>
-                  <p>Click the search button to view your choices!</p>
+                  <p>Click the search button to view your
+                    choices!</p>
                 </div>
               </div>
               <!-- added Myrna's info -->

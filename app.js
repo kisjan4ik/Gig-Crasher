@@ -53,7 +53,7 @@ document.getElementById("noflight").onclick = function () {
 
 $.ajax({
     type: "GET",
-    url: "https://app.ticketmaster.com/discovery/v2/classifications/segments/KZazBEonSMnZfZ7vFta.json?apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
+    url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
     async: true,
     dataType: "json",
     success: function (json) {
