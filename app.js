@@ -1,11 +1,15 @@
 //global variables for skyscanner search params
 
-var userMarket = "US";
+
+// onclick event
+// date to be shwon: photo, descritpion, date, location
+
+var country = "US";
 var currency = "USD";
 var locale = "en-US";
 var userDestination = document.getElementById("searchDestination").value;
 
-var queryString = userMarket + '/' + currency + '/' + locale + '/' +
+var queryString = country + '/' + currency + '/' + locale + '/' +
     userDestination;
 
 
@@ -25,7 +29,10 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 
-// ticketmaster ajax test
+
+
+// ticketmaster ajax test 
+// ?
 $.ajax({
     type: "GET",
     url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
