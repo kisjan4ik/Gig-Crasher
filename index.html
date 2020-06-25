@@ -9,17 +9,24 @@
 <body>
     <div class="header">
         <form>
-            <h1> Find events and BnBs nearby! </h1>
+            <!-- changed BnB to flights -->
+            <h1> Find events and flights nearby! </h1>
             <div class="form-box">
                 <input type="text" class="search-field events" placeholder="...What do you want to do?...">
                 <input type="text" class="search-field location" placeholder="...Where do you want to go?...">
                 <button class="search-btn" type="button"> Search </button>
+                <br>
+                <div style="float:right"><input type="checkbox" id="noflight">
+            <label for="noflight" style="color: white; font-size: x-small;">do not iclude flights</label><br>
+                </div>
             </div>
         </form>
     </div> 
-  
-  
-  
+    <div class="main" id="response">
+        <div id="events"></div>
+        <div id="flights"></div>
+    </div>
+    <div class="footer"></div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="app.js">

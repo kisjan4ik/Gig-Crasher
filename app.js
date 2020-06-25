@@ -27,3 +27,14 @@ $.ajax({
         // This time, we do not end up here!
     }
 });
+
+// assign function to onclick property of checkbox
+document.getElementById("noflight").onclick = function() {
+    // access properties using this keyword
+    if ( this.checked ) {
+        // if checked ...
+        alert("No flight search");
+    } else {
+        // if not checked: search for flights
+    }
+};
