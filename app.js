@@ -1,4 +1,18 @@
-//global variables for skyscanner search params
+$(document).ready(function() {
+    
+                 
+    // creating click button to return the departure city
+    
+    $("#depCity").on("click", function (event) {
+        event.preventDefault();
+        console.log("it works");
+        var depCity=$("#depCity").val();
+    
+        
+
+    })
+
+// /global variables for skyscanner search params
 
 
 // onclick event
@@ -59,3 +73,5 @@ document.getElementById("noflight").onclick = function() {
         // if not checked: search for flights
     }
 };
+
+})

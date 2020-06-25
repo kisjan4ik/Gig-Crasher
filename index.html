@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gig-Crasher!</title>
-    <link href="style.css" rel="stylesheet"> 
+    <link href="asset/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="header">
         <form>
             <!-- changed BnB to flights -->
             <h1> Find events and flights nearby! </h1>
             <div class="form-box">
-                <input type="text" class="search-field events" placeholder="...What do you want to do?...">
-                <input type="text" class="search-field location" placeholder="...Where do you want to go?...">
-                <button class="search-btn" type="button"> Search </button>
+                <input type="text" class="search-field events" id="eventSearch"
+                    placeholder="...What do you want to do?...">
+                <input type="text" class="search-field location" id="cityName"
+                    placeholder="...Where do you want to go?...">
+                <button type="search" id="depCity" class="btn btn-primary"> search </button>
                 <br>
                 <div style="float:right"><input type="checkbox" id="noflight">
-            <label for="noflight" style="color: white; font-size: x-small;">do not iclude flights</label><br>
+                    <label for="noflight" style="color: white; font-size: x-small;">do not iclude flights</label><br>
                 </div>
             </div>
         </form>
-    </div> 
+    </div>
     <div class="main" id="response">
         <div id="events"></div>
         <div id="flights"></div>
     </div>
     <div class="footer"></div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="app.js">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="asset/app.js">
     </script>
 
 </body>
