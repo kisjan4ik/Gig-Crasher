@@ -1,3 +1,27 @@
+
+$(document).ready(function() {
+    
+     // onclick event            
+    // creating click button to return the departure city
+    
+    $("#depCity").on("click", function (event) {
+        event.preventDefault();
+        console.log("it works");
+        var depCity=$("#depCity").val();        
+
+    })
+
+// /global variables for skyscanner search params
+
+var country = "US";
+var currency = "USD";
+var locale = "en-US";
+var userDestination = document.getElementById("searchDestination").value;
+
+var queryString = country + '/' + currency + '/' + locale + '/' +
+    userDestination;
+
+
 var settings = {
     "async": true,
     "crossDomain": true,
@@ -23,6 +47,10 @@ document.getElementById("noflight").onclick = function () {
         });
     }
 };
+  
+  
+// skyscanner: date to be shown, photo, descritpion, date, location
+
 
 $.ajax({
     type: "GET",
