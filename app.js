@@ -30,32 +30,31 @@ $.ajax(settings).done(function (response) {
 });
 
 
-
-// ticketmaster ajax test 
-// ?
-$.ajax({
-    type: "GET",
-    url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
-    async: true,
-    dataType: "json",
-    success: function (json) {
-        console.log(json);
-        document.getElementById('')
-        // Parse the response.
-        // Do other things.
-    },
-    error: function (xhr, status, err) {
-        // This time, we do not end up here!
-    }
-});
-
 // assign function to onclick property of checkbox
-document.getElementById("noflight").onclick = function() {
+document.getElementById("noflight").onclick = function () {
     // access properties using this keyword
-    if ( this.checked ) {
+    if (this.checked) {
         // if checked ...
-        alert("No flight search");
-    } else {
-        // if not checked: search for flights
+        return; //stop the execution of function
+    }
+    else {
+        // ticketmaster ajax test 
+        // ?
+        $.ajax({
+            type: "GET",
+            url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
+            async: true,
+            dataType: "json",
+            success: function (json) {
+                console.log(json);
+                document.getElementById('')
+                // Parse the response.
+                // Do other things.
+            },
+            error: function (xhr, status, err) {
+                // This time, we do not end up here!
+            }
+        });
     }
 };
+
