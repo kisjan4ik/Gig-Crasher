@@ -1,26 +1,25 @@
+$(document).ready(function () {
 
-$(document).ready(function() {
-    
-     // onclick event            
+    // onclick event            
     // creating click button to return the departure city
-    
+
     $("#depCity").on("click", function (event) {
         event.preventDefault();
         console.log("it works");
-        var depCity=$("#depCity").val();  
-      
+        var depCity = $("#depCity").val();
+
     })
-    })
+})
 
 // /global variables for skyscanner search params
 
-var country = "US";
-var currency = "USD";
-var locale = "en-US";
-var userDestination = document.getElementById("searchDestination").value;
+// var country = "US";
+// var currency = "USD";
+// var locale = "en-US";
+// var userDestination = document.getElementById("searchDestination").value;
 
-var queryString = country + '/' + currency + '/' + locale + '/' +
-    userDestination;
+// var queryString = country + '/' + currency + '/' + locale + '/' +
+//     userDestination;
 
 
 var settings = {
@@ -34,22 +33,21 @@ var settings = {
     }
 }
 
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+
 // assign function to onclick property of checkbox
 document.getElementById("noflight").onclick = function () {
     // access properties using this keyword
     if (this.checked) {
         // if checked ...
-       return; //stop the execution of function
-    }
-    else {
-        // if not checked: search for flights
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
+        return; //stop the execution of function
     }
 };
-  
-  
+
+
 // skyscanner: date to be shown, photo, descritpion, date, location
 
 
