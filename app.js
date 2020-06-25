@@ -7,8 +7,9 @@ $(document).ready(function() {
     $("#depCity").on("click", function (event) {
         event.preventDefault();
         console.log("it works");
-        var depCity=$("#depCity").val();        
-
+        var depCity=$("#depCity").val();  
+      
+    })
     })
 
 // /global variables for skyscanner search params
