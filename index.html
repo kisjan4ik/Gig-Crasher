@@ -1,41 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gig-Crasher!</title>
-    <link href="asset/style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gig-Crashers</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/016031556c.js"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="header">
-        <form>
-            <!-- changed BnB to flights -->
-            <h1> Find events and flights nearby! </h1>
-            <div class="form-box">
-                <input type="text" class="search-field events" id="eventSearch"
-                    placeholder="...What do you want to do?...">
-                <input type="text" class="search-field location" id="cityName"
-                    placeholder="...Where do you want to go?...">
-                <button type="search" id="depCity" class="btn btn-primary"> search </button>
-                <br>
-                <div style="float:right"><input type="checkbox" id="noflight">
-                    <label for="noflight" style="color: white; font-size: x-small;">do not iclude flights</label><br>
+  <!-- <section class="hero"> -->
+  <section class="hero is-medium is-primary">
+    <!-- <img src="cityscape.jpg"> -->
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8-desktop is-offset-2-desktop">
+            <h1 class="title is-2 is-spaced">
+              Find events and flights to get you there!
+            </h1>
+            <h2 class="subtitle is-4">
+              <i class="far fa-calendar-alt"></i>
+              What event would you like to attend?
+              <div class="form-box">
+                <input type="text" class="search-field events">
+                <!-- <input type="text" class="search-field location" placeholder="...Where do you want to go?..."> -->
+
+              </div>
+              <br>
+              <i class="fa fa-plane" aria-hidden="true"></i>
+              Would you like to view flights?
+              <br>
+              <label class="checkbox">
+                <input type="checkbox">
+                <i>Yes! Show me those flights!</i>
+              </label>
+              <!-- <div class="form-box"> -->
+              <!-- <input type="text" class="search-field location" placeholder="...Where do you want to go?..."> -->
+              <!-- </div> -->
+              <br><br>
+              <button class="search-btn" type="button"> Search </button>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <div class="content">
+            <div class="steps">
+              <div class="step-item is-completed is-success">
+                <div class="step-marker">
+                  <span class="icon">
+                    <i class="fa fa-check"></i>
+                  </span>
                 </div>
-            </div>
-        </form>
-    </div>
-    <div class="main" id="response">
-        <div id="events"></div>
-        <div id="flights"></div>
-    </div>
-    <div class="footer"></div>
+                <div class="step-details">
+                  <p class="step-title"><i>Step 1</i></p>
+                  <p>Enter the event you want to attend...</p>
+                </div>
+              </div>
+              <br>
+              <div class="step-item is-active">
+                <div class="step-marker"></div>
+                <div class="step-details">
+                  <p class="step-title"><i>Step 2</i></p>
+                  <p>Check the box if you would like to see flights...</p>
+                </div>
+              </div>
+              <br>
+              <div class="step-item">
+                <div class="step-marker"></div>
+                <div class="step-details">
+                  <p class="step-title"><i>Step 3</i></p>
+                  <p>Click the search button to view your choices!</p>
+                </div>
+              </div>
+              <!-- added Myrna's info -->
+              <div class="main" id="response">
+                <div id="events"></div>
+                <div id="flights"></div>
+              </div>
+              <footer class="footer has-text-centered">
+                <div class="container">
+                  <div class="columns">
+                    <div class="column is-8-desktop is-offset-2-desktop">
+                      <p>
+                        <strong class="has-text-weight-semibold">
+                          <a href="https://www.npmjs.com/package/bulma-start">Gig-Crashers
+                            <i>by CharliesAngels</i></a>
+                        </strong>
+                      </p>
+                      <p>
+                        <small>
+                          Source code licensed <a
+                            href="http://opensource.org/licenses/mit-license.php">MIT</a>
+                        </small>
+                      </p>
+                      <p style="margin-top: 1rem;">
+                        <a href="http://bulma.io">Made with Bumba</a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="asset/app.js">
-    </script>
-
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+              <!-- <script type="text/javascript" src="main.js"></script> -->
 </body>
 
 </html>
