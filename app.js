@@ -1,7 +1,19 @@
+//global variables for skyscanner search params
+
+var userMarket = "US";
+var currency = "USD";
+var locale = "en-US";
+var userDestination = document.getElementById("searchDestination").value;
+
+var queryString = userMarket + '/' + currency + '/' + locale + '/' +
+    userDestination;
+
+
+
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm",
+    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/" + queryString,
     "method": "GET",
     "headers": {
         "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -13,13 +25,15 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 
+// ticketmaster ajax test
 $.ajax({
     type: "GET",
-    url: "https://app.ticketmaster.com/discovery/v2/classifications/segments/KZazBEonSMnZfZ7vFta.json?apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
+    url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
     async: true,
     dataType: "json",
     success: function (json) {
         console.log(json);
+        document.getElementById('')
         // Parse the response.
         // Do other things.
     },
