@@ -1,2 +1,5 @@
 # Gig-Crasher
-An app to search for events through StubHub API, and return results together with AirBnB listings in that zip code using the AirBnB API.
+Christian, Olena, Jody, Myrna's Group Project (#1)
+
+# About this application
+An app to search for events through TicketMaster API, and return results together with SkyScanner flight listings in that given location using the SkyScanner API.
