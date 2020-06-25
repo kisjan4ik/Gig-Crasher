@@ -20,7 +20,6 @@ document.getElementById("noflight").onclick = function () {
         // if not checked: search for flights
         $.ajax(settings).done(function (response) {
             console.log(response);
-
         });
     }
 };
