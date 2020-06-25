@@ -1,22 +1,17 @@
+
 $(document).ready(function() {
     
-                 
+     // onclick event            
     // creating click button to return the departure city
     
     $("#depCity").on("click", function (event) {
         event.preventDefault();
         console.log("it works");
-        var depCity=$("#depCity").val();
-    
-        
+        var depCity=$("#depCity").val();        
 
     })
 
 // /global variables for skyscanner search params
-
-
-// onclick event
-// date to be shwon: photo, descritpion, date, location
 
 var country = "US";
 var currency = "USD";
@@ -27,11 +22,10 @@ var queryString = country + '/' + currency + '/' + locale + '/' +
     userDestination;
 
 
-
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/" + queryString,
+    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm",
     "method": "GET",
     "headers": {
         "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -39,22 +33,32 @@ var settings = {
     }
 }
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
+// assign function to onclick property of checkbox
+document.getElementById("noflight").onclick = function () {
+    // access properties using this keyword
+    if (this.checked) {
+        // if checked ...
+       return; //stop the execution of function
+    }
+    else {
+        // if not checked: search for flights
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+};
+  
+  
+// skyscanner: date to be shown, photo, descritpion, date, location
 
 
-
-// ticketmaster ajax test 
-// ?
 $.ajax({
     type: "GET",
-    url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
+    url: "https://app.ticketmaster.com/discovery/v2/classifications/segments/KZazBEonSMnZfZ7vFta.json?apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d",
     async: true,
     dataType: "json",
     success: function (json) {
         console.log(json);
-        document.getElementById('')
         // Parse the response.
         // Do other things.
     },
@@ -63,15 +67,3 @@ $.ajax({
     }
 });
 
-// assign function to onclick property of checkbox
-document.getElementById("noflight").onclick = function() {
-    // access properties using this keyword
-    if ( this.checked ) {
-        // if checked ...
-        alert("No flight search");
-    } else {
-        // if not checked: search for flights
-    }
-};
-
-})
