@@ -1,4 +1,9 @@
 /* css not needed for bulma framework. */
+p, label.checkbox {
+    font-size: medium;
+  }
+  
+
 /* body {
     margin: 0;
     padding: 0;
