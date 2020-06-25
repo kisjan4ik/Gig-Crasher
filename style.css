@@ -1,4 +1,5 @@
-body {
+/* css not needed for bulma framework. */
+/* body {
     margin: 0;
     padding: 0;
 }
@@ -55,5 +56,5 @@ h1 {
 .form-box {
     background: rgba(0,0,0,0.5);
     padding: 30px;
-}
+} */
 /* looks really good  */
