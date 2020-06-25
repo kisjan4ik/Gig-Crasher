@@ -14,7 +14,7 @@ document.getElementById("noflight").onclick = function () {
     // access properties using this keyword
     if (this.checked) {
         // if checked ...
-        alert("No flight search");
+       return; //stop the execution of function
     }
     else {
         // if not checked: search for flights
