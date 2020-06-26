@@ -27,6 +27,13 @@ p, label.checkbox {
     color: #c0c0c0
 }
 
+#flights {
+    font-size: 20px;
+    color: green;
+    background:rgb(247, 244, 244);
+    text-align: left;
+    padding-left: 70%;
+}
 /* the code below is for the initial code for generic page */
 
 /* body {
