@@ -18,11 +18,14 @@ $(document).ready(function () {
 // var queryString = country + '/' + currency + '/' + locale + '/' +
 //     userDestination;
 
+var city = $("#searchDestination").val() || "Stockholm"
+
+
 
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm",
+    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=" + city,
     "method": "GET",
     "headers": {
         "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
