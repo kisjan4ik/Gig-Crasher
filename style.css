@@ -1,4 +1,3 @@
-/* css not needed for bulma framework. */
 p, label.checkbox {
     font-size: medium;
 
@@ -25,7 +24,10 @@ p, label.checkbox {
 .fa {
     color: #3425f8;
 }
+
+
 /* the code below is for the initial code for generic page */
+
 /* body {
     margin: 0;
     padding: 0;
