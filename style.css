@@ -23,7 +23,9 @@ p, label.checkbox {
 
 .fa {
     color: #3425f8;
-}i {
+}
+
+i {
     color: #c0c0c0
 }
 
@@ -33,6 +35,11 @@ p, label.checkbox {
     background:rgb(247, 244, 244);
     text-align: left;
     padding-left: 70%;
+}
+
+#eventKeyword, #searchDestination {
+    font-style: italic;
+    font-size: 5px;
 }
 
 #events {
