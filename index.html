@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+<!-- attemp 5 million -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,16 @@
   <title>Gig-Crashers</title>
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- remove comment below to add image (and remove comment from img) -->
+  <!-- remove comment below to add image (and remove comment from img) -->
   <!-- <section class="hero"> -->
-  <section class="hero is-medium is-primary">
+  <section class="hero">
     <!-- <img src="cityscape.jpg"> -->
     <div class="hero-body">
       <div class="container">
@@ -29,22 +33,24 @@
               <!-- input field for visitor to name the event  -->
               <div class="form-box">
                 <input type="text" class="search-field events">
-                <!-- <input type="text" class="search-field location" id="searchDestination" placeholder="...Where do you want to go?..."> -->
-
               </div>
               <br>
               <i class="fa fa-plane" aria-hidden="true"></i>
-              Would you like to view flights?
-              <br>
-              <label class="checkbox">
-                <input type="checkbox">
-                <i>Yes! Show me those flights!</i>
-              </label>
-              <!-- <div class="form-box"> -->
-              <!-- <input type="text" class="search-field location" id="searchDestination" placeholder="...Where do you want to go?..."> -->
-              <!-- </div> -->
-              <br><br>
-              <button class="search-btn" type="button"> Search </button>
+              Want to view flights?
+              <div class="form-box">
+                <p>Type a city...</p>
+                <div>
+                  <input class="form-box" type="text"
+                    class="search-field location" id="searchDestination">
+                </div>
+                <label class="checkbox">
+                  <input id="noflight" type="checkbox">
+                  <i>Nope. All good!</i>
+                </label>
+                <br><br>
+                <button id="userinput" class="search-btn" type="button"> Search
+                </button>
+              </div>
             </h2>
           </div>
         </div>
@@ -73,7 +79,8 @@
                 <div class="step-marker"></div>
                 <div class="step-details">
                   <p class="step-title"><i>Step 2</i></p>
-                  <p>Check the box if you would like to see flights...</p>
+                  <p>Check the box if you don't need
+                    flights, or type in a city if you do...</p>
                 </div>
               </div>
               <br>
@@ -81,7 +88,8 @@
                 <div class="step-marker"></div>
                 <div class="step-details">
                   <p class="step-title"><i>Step 3</i></p>
-                  <p>Click the search button to view your choices!</p>
+                  <p>Click the search button to view your
+                    choices!</p>
                 </div>
               </div>
               <!-- added Myrna's info -->
@@ -89,33 +97,45 @@
                 <div id="events"></div>
                 <div id="flights"></div>
               </div>
-              <footer class="footer has-text-centered">
-                <div class="container">
-                  <div class="columns">
-                    <div class="column is-8-desktop is-offset-2-desktop">
-                      <p>
-                        <strong class="has-text-weight-semibold">
-                          <a href="https://www.npmjs.com/package/bulma-start">Gig-Crashers
-                            <i>by CharliesAngels</i></a>
-                        </strong>
-                      </p>
-                      <p>
-                        <small>
-                          Source code licensed <a
-                            href="http://opensource.org/licenses/mit-license.php">MIT</a>
-                        </small>
-                      </p>
-                      <p style="margin-top: 1rem;">
-                        <a href="http://bulma.io">Made with Bumba</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <footer class="footer has-text-centered">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <p>
+            <strong class="has-text-weight-semibold">
+              <a href="https://www.npmjs.com/package/bulma-start">Gig-Crashers
+                <i>by
+                  CharliesAngels</i></a>
+            </strong>
+          </p>
+          <p>
+            <small>
+              Source code licensed <a
+                href="http://opensource.org/licenses/mit-license.php">MIT</a>
+            </small>
+          </p>
+          <p style="margin-top: 1rem;">
+            <a href="http://bulma.io">Made
+              with Bulma</a>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script type="text/javascript" src="app.js">              
-      <!-- <script type="text/javascript" src="main.js"></script> -->
+
+    <script type="text/javascript" src="app.js"></script>
+
+    </script>
+
+
 </body>
 
 </html>
