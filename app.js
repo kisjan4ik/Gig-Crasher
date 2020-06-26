@@ -80,15 +80,24 @@ $.ajax(settings).done(function (response) {
                 for (var i = 0; i < 5; i++) {
                     var eventName = response._embedded.events[i].name;
                     var eventDate = response._embedded.events[i].dates.start.localDate;
-                    var eventTime = response._embedded.events[i].dates.start.localTime;
+                    var eventTime = response._embedded.events[i].dates.start.timeTBA;
                     var eventImage = response._embedded.events[i].images[0];
-
-
+                    var ptag1 = $("<p>").text(eventName);
+                    var ptag2 = $("<p>").text( "date: " + eventDate );
+                    var ptag3 = $("<p>").text(eventTime? "time: timeTBA":"time: "+ evenTime);
+                    var imgTag = $("<img>").attr("src",eventImage.url);
+                    $("#events").append(ptag1,ptag2,ptag3,imgTag);
 
                     console.log(eventName);
                     console.log(eventDate);
-                    console.log(eventTime);
+                    console.log(response);
                     console.log(eventImage);
+
+
+
+
+
+
                 }
 
 
