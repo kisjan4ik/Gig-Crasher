@@ -1,9 +1,31 @@
 /* css not needed for bulma framework. */
+/* css not needed for bulma framework. */
 p, label.checkbox {
     font-size: medium;
-  }
-  
 
+}    
+
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(cityscape.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title, .subtitle {
+    color: #c0c0c0;
+}
+
+.far {
+    color:#f87575;
+}
+
+.fa {
+    color: #3425f8;
+}
 /* body {
     margin: 0;
     padding: 0;
