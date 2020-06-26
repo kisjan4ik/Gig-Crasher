@@ -23,10 +23,16 @@ p, label.checkbox {
 
 .fa {
     color: #3425f8;
-}i {
+}
+
+i {
     color: #c0c0c0
 }
 
+#eventKeyword, #searchDestination {
+    font-style: italic;
+    
+}
 /* the code below is for the initial code for generic page */
 
 /* body {
