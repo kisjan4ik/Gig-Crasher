@@ -72,11 +72,17 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 for (var i = 0; i < 5; i++) {
-                    var events = response._embedded.events[i];
+                    var eventName = response._embedded.events[i].name;
+                    var eventDate = response._embedded.events[i].dates.start.localDate;
+                    var eventTime = response._embedded.events[i].dates.start.localTime;
+                    var eventImage = response._embedded.events[i].images[0];
 
 
 
-                    console.log(events);
+                    console.log(eventName);
+                    console.log(eventDate);
+                    console.log(eventTime);
+                    console.log(eventImage);
                 }
 
 
