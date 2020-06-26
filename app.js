@@ -3,13 +3,10 @@ $(document).ready(function () {
     // onclick event            
     // creating click button to return the departure city
 
-    $("#depCity").on("click", function (event) {
+    $("#userinput").on("click", function (event) {
         event.preventDefault();
         console.log("it works");
-        var depCity = $("#depCity").val();
-
-    })
-})
+        var userInput = $("#userinput").val();
 
 // /global variables for skyscanner search params
 
@@ -35,7 +32,18 @@ var settings = {
 
 
 $.ajax(settings).done(function (response) {
-    console.log(response);
+    console.log("Flight info = "+ JSON.stringify(response));
+
+var flights = "";
+
+for (let i=0; i<5; i++){
+    $("#flights").html(flights);
+    flights += "<div id='flightsoptions'>";
+    flights += "<p>" + response.Places[i].CountryName + "</p>";
+    flights += "<p>" + response.Places[i].PlaceName + "</p>";
+    flights += "<p>" + response.Places[i].PlaceId + "</p>";
+}
+
 });
 
 // assign function to onclick property of checkbox
@@ -65,4 +73,15 @@ $.ajax({
         // This time, we do not end up here!
     }
 });
+
+
+
+
+
+
+
+    })
+})
+
+
 
