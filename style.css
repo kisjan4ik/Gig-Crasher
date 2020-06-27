@@ -39,7 +39,8 @@ i {
 
 #eventKeyword, #searchDestination {
     font-style: italic;
-  
+    font-size: 18px;
+
 }
 
 #events {
