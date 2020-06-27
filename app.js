@@ -61,10 +61,6 @@ $(document).ready(function () {
         }
 
 
-
-
-
-
         // skyscanner: date to be shown, photo, descritpion, date, location
 
         var cityVar = "";
@@ -98,19 +94,9 @@ $(document).ready(function () {
                     console.log(response);
                     console.log(eventImage);
 
-
-
-
-
-
                 }
-
-
-                // Parse the response.
-                // Do other things.
             },
             error: function (xhr, status, err) {
-                // This time, we do not end up here!
             }
         })
 
