@@ -36,10 +36,10 @@ $(document).ready(function () {
 
                 for (let i = 0; i < 5; i++) {
                     $("#flights").html(flights);
-                    flights += "<div id='flightsoptions'> Destination Airport:" + [i + 1];
+                    flights += "<div id='flightsoptions'> Destination Airport:" + [i + 1] + "<br>";
                     flights += "<p>" + response.Places[i].CountryName + "</p>";
                     flights += "<p>" + response.Places[i].PlaceName + "</p>";
-                    flights += "<p>" + response.Places[i].PlaceId + "</p>";
+                    flights += "<p id='lastitem'>" + response.Places[i].PlaceId + "</p>";
                 }
             });
         }
@@ -53,6 +53,7 @@ $(document).ready(function () {
             url: eventURL + eventKeyword + "&locale=*&size=5&city=" + cityVar,
             async: true,
             dataType: "json",
+
             success: function (response) {
                 $("#events").empty();
                 for (var i = 0; i < 5; i++) {
@@ -69,6 +70,7 @@ $(document).ready(function () {
                     var ptag3 = $("<p>").text(eventTime ? "time: " + eventTime : "time: " + timeTBA);
 
                     ptag1.attr("target", "_blank")
+                    ptag1.addClass("link")
                     ptag1.text(eventName)
                     ptag0.append(ptag1)
 

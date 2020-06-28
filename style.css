@@ -3,6 +3,27 @@ p, label.checkbox {
 
 }    
 
+i {
+    color: #c0c0c0
+}
+
+img {
+    width:305px;
+    height: 225px;
+    margin-bottom: 2em;
+}
+
+.content blockquote:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content p:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child), .content ul:not(:last-child) {
+    margin-bottom: 0em;
+}
+
+.link, #response {
+    color:#f87575; 
+    font-weight: 600;
+    font-style: italic;
+    padding-bottom: 2em;
+}
+
 .hero {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(cityscape.jpg);
     background-size: cover;
@@ -25,14 +46,10 @@ p, label.checkbox {
     color: #3425f8;
 }
 
-i {
-    color: #c0c0c0
-}
 
 #flights {
     font-size: 20px;
     color: #3425f8;
-    background:rgb(247, 244, 244);
     text-align: left;
     padding-left: 70%;
 }
@@ -47,7 +64,21 @@ i {
     float:left;
     font-size: 20px;
     color: #f87575;
-    background:rgb(247, 244, 244);
     text-align: left;
     padding-left: 10%;
+}
+
+#flightsoptions {
+    font-weight: 600;
+    font-style: italic;
+    padding-bottom: 50px;
+}
+
+#emptyspace {
+    height: 30px;
+
+}
+
+#lastitem {
+    padding-bottom: 50px;
 }
