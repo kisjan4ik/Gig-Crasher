@@ -5,7 +5,6 @@ $(document).ready(function () {
     // assign function to onclick property of checkbox
     document.getElementById("noflight").onclick = function () {
         // access properties using this keyword
-        console.log(this.checked);
         isChecked = this.checked
 
     };
@@ -14,20 +13,9 @@ $(document).ready(function () {
 
     $("#userinput").on("click", function (event) {
         event.preventDefault();
-        console.log("it works");
         var userInput = $("#userinput").val();
 
-        // /global variables for skyscanner search params
-
-        // var country = "US";
-        // var currency = "USD";
-        // var locale = "en-US";
-        // var userDestination = document.getElementById("searchDestination").value;
-
-        // var queryString = country + '/' + currency + '/' + locale + '/' +
-        //     userDestination;
-
-        var city = $("#searchDestination").val() || "Stockholm"
+        var city = $("#searchDestination").val()
 
         if (!isChecked) {
 
@@ -42,25 +30,19 @@ $(document).ready(function () {
                 }
             }
 
-
             $.ajax(settings).done(function (response) {
-                console.log("Flight info = " + JSON.stringify(response));
                 $("#flights").empty();
                 var flights = "";
 
                 for (let i = 0; i < 5; i++) {
                     $("#flights").html(flights);
-                    flights += "<div id='flightsoptions'> Destination Airport:" + [i + 1];
+                    flights += "<div id='flightsoptions'> Destination Airport:" + [i + 1] + "<br>";
                     flights += "<p>" + response.Places[i].CountryName + "</p>";
                     flights += "<p>" + response.Places[i].PlaceName + "</p>";
-                    flights += "<p>" + response.Places[i].PlaceId + "</p>";
+                    flights += "<p id='lastitem'>" + response.Places[i].PlaceId + "</p>";
                 }
-
             });
-
         }
-
-
         // skyscanner: date to be shown, photo, descritpion, date, location
 
         var cityVar = "";
@@ -71,39 +53,34 @@ $(document).ready(function () {
             url: eventURL + eventKeyword + "&locale=*&size=5&city=" + cityVar,
             async: true,
             dataType: "json",
+
             success: function (response) {
                 $("#events").empty();
-                console.log(response);
                 for (var i = 0; i < 5; i++) {
                     var eventName = response._embedded.events[i].name;
+                    var eventURL = response._embedded.events[i].url;
                     var eventDate = response._embedded.events[i].dates.start.localDate;
                     var eventTime = response._embedded.events[i].dates.start.localTime;
-                    var eventImage = response._embedded.events[i].images[0];
+                    var eventImage = response._embedded.events[i].images[i];
                     var timeTBA = response._embedded.events[i].timeTBA;
-                    var ptag1 = $("<p>").text(eventName);
+
+                    var ptag0 = $("<p>").text(eventName)
+                    var ptag1 = $("<a>").attr("href", eventURL);
                     var ptag2 = $("<p>").text("date: " + eventDate);
                     var ptag3 = $("<p>").text(eventTime ? "time: " + eventTime : "time: " + timeTBA);
+
+                    ptag1.attr("target", "_blank")
+                    ptag1.addClass("link")
+                    ptag1.text(eventName)
+                    ptag0.append(ptag1)
 
                     //if there is a localTime, append .this
                     // if there is a timeTBA, append this
                     var imgTag = $("<img>").attr("src", eventImage.url);
-                    $("#events").append(ptag1, ptag2, ptag3, imgTag);
-
-                    console.log(eventName);
-                    console.log(eventDate);
-                    console.log(response);
-                    console.log(eventImage);
-
+                    $("#events").append(ptag1, "<br>", ptag2, ptag3, imgTag, "<br>");
                 }
             },
-            error: function (xhr, status, err) {
-            }
         })
-
-
-
-
-
 
     })
 })
