@@ -46,6 +46,10 @@ img {
     color: #3425f8;
 }
 
+.footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
 #flights {
     font-size: 20px;
@@ -61,6 +65,7 @@ img {
 }
 
 #events {
+    width:50%;
     float:left;
     font-size: 20px;
     color: #f87575;

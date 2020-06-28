@@ -1,76 +1,95 @@
 ## Gig-Crasher
 An app to search for events through TicketMaster API, and return results together with SkyScanner flight listings in that given location using the SkyScanner API.
 
+
 ## Motivation
 This project is to streamline finding any event of choice with a quick way to get there. 
-*A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.*
+The application gives user an option to search for the flights destinations and there is a space for future improvoement of the application to add an accomodation places sdearch.
 
-## Build status
-*Build status of continus integration i.e. travis, appveyor etc. Ex. -*
-
-[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
 
 ## Code style
-*If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -*
-
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
- 
-## Screenshots
-Include logo/demo screenshot etc.
+
 
 ## Tech/framework used
 - JavaScript
+- JQuery
 - CSS Framework (Bulma)
 - HTML
 - APIs
 *Ex. <b>Built with</b> [Electron](https://electron.atom.io)]*
 
+
 ## Features
-This project uses....
-*What makes your project stand out?*
+This project uses APIs of SkyScanner and Ticketmaster. These APIs combined give an user an opportunity to find more information using just one application. Nice and simple interface is not distracting the customer and the result of the input search has images and an active link to  the event itself that is also very convenient.
+
 
 ## Code Example
-[code snippet]
-*Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.*
+Here is a pice of code for the AJAX method using ScyScanner API
+     var city = $("#searchDestination").val()
 
-## Installation
-1. ...
-2. ...
-3. ...
-*Provide step by step series of examples and explanations about how to get a development env running.*
+        if (!isChecked) {
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=" + city,
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+                    "x-rapidapi-key": "f4e7fa0f3amsh07cbec10686c47cp142668jsne2338ac4ac2e"
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+                $("#flights").empty();
+                var flights = "";
+
+                for (let i = 0; i < 5; i++) {
+                    $("#flights").html(flights);
+                    flights += "<div id='flightsoptions'> Destination Airport:" + [i + 1] + "<br>";
+                    flights += "<p>" + response.Places[i].CountryName + "</p>";
+                    flights += "<p>" + response.Places[i].PlaceName + "</p>";
+                    flights += "<p id='lastitem'>" + response.Places[i].PlaceId + "</p>";
+                }
+            });
+        }
+
 
 ## API Reference
 - Ticketmaster
 - Skyscanner
-*Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.*
 
-## Tests
-[code snippet]
-*Describe and show how to run the tests with code examples.*
 
 ## How to use?
 - Enter the event by artist, event type, or venue in the input box under "What event would you like to attend?" 
 - If you need a flight to get there, enter the city of the event destination.
 - If you don't need a flight, check the box and see the event results!
 - It's as simple as that!
-*If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.*
 
-## Contribute
-....
-*Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.*
 
 ## Credits
 - Christian Wolfe
 - Olena Turetska
 - Jody Eggleston
 - Myrna Cantando
-*Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project.* 
 
-#### Anything else that seems useful
-...
 
-## License
-*A short snippet describing the license (MIT, Apache etc)*
+## Screenshoots
 
-MIT ©
+![GigCrasher1](https://user-images.githubusercontent.com/63433561/85959164-b86b5280-b968-11ea-8ac1-f9a62eb4f748.PNG)
+
+![GigCrasher2](https://user-images.githubusercontent.com/63433561/85959166-b99c7f80-b968-11ea-8a64-28a50eca244d.PNG)
+
+![GigCrasher3](https://user-images.githubusercontent.com/63433561/85959168-ba351600-b968-11ea-8066-37423dae35cb.PNG)
+
+![GigCrasher4](https://user-images.githubusercontent.com/63433561/85959169-bacdac80-b968-11ea-82ff-92c7764368e1.PNG)
+
+
+Links to the repository on Github.com and to thesite published  at Github Host are the following:
+
+ https://github.com/kisjan4ik/Gig-Crasher
+
+ https://kisjan4ik.github.io/Gig-Crasher/
+
+© Copyright 2020
