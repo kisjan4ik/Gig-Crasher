@@ -62,7 +62,8 @@ $(document).ready(function () {
                     var eventDate = response._embedded.events[i].dates.start.localDate;
                     var eventTime = response._embedded.events[i].dates.start.localTime;
                     var eventImage = response._embedded.events[i].images[i];
-                    var timeTBA = response._embedded.events[i].timeTBA;
+                    var timeTBA = response._embedded.events[i].dates.start.timeTBA;
+                    var timeTBA = "To Be Announced";
 
                     var ptag0 = $("<p>").text(eventName)
                     var ptag1 = $("<a>").attr("href", eventURL);
