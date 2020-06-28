@@ -57,7 +57,7 @@ $(document).ready(function () {
                 $("#events").empty();
                 for (var i = 0; i < 5; i++) {
                     var eventName = response._embedded.events[i].name;
-                    var eventURL = response._embedded.events[0].url;
+                    var eventURL = response._embedded.events[i].url;
                     var eventDate = response._embedded.events[i].dates.start.localDate;
                     var eventTime = response._embedded.events[i].dates.start.localTime;
                     var eventImage = response._embedded.events[i].images[i];
