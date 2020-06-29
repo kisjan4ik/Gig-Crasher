@@ -13,6 +13,7 @@ $(document).ready(function () {
 
     $("#userinput").on("click", function (event) {
         event.preventDefault();
+        $("#flights").empty();
         var userInput = $("#userinput").val();
 
         var city = $("#searchDestination").val()
@@ -31,7 +32,7 @@ $(document).ready(function () {
             }
 
             $.ajax(settings).done(function (response) {
-                $("#flights").empty();
+
                 var flights = "";
 
                 for (let i = 0; i < 5; i++) {
@@ -45,12 +46,12 @@ $(document).ready(function () {
         }
         // skyscanner: date to be shown, photo, descritpion, date, location
 
-        var cityVar = "";
+
         var eventKeyword = $("#eventKeyword").val();
         var eventURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=93yzDEOR3pw5XEs9GHp6f7ZCGLvGZg6d&keyword=";
         $.ajax({
             type: "GET",
-            url: eventURL + eventKeyword + "&locale=*&size=5&city=" + cityVar,
+            url: eventURL + eventKeyword + "&locale=*&size=5&city=" + city,
             async: true,
             dataType: "json",
 
