@@ -4,7 +4,7 @@ An app to search for events through TicketMaster API, and return results togethe
 
 ## Motivation
 This project is to streamline finding any event of choice with a quick way to get there. 
-The application gives user an option to search for the flights destinations and there is a space for future improvoement of the application to add an accomodation places sdearch.
+The application gives user an option to search for the flights destinations and there is a space for future improvoement of the application to add an accomodation places search.
 
 
 ## Code style
@@ -17,8 +17,6 @@ The application gives user an option to search for the flights destinations and 
 - CSS Framework (Bulma)
 - HTML
 - APIs
-*Ex. <b>Built with</b> [Electron](https://electron.atom.io)]*
-
 
 ## Features
 This project uses APIs of SkyScanner and Ticketmaster. These APIs combined give an user an opportunity to find more information using just one application. Nice and simple interface is not distracting the customer and the result of the input search has images and an active link to  the event itself that is also very convenient.
